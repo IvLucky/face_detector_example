@@ -1,7 +1,6 @@
 FROM continuumio/anaconda
 
 RUN conda install -y opencv
-RUN mkdir /app
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
@@ -18,6 +17,5 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-#RUN chmod 777 /opt/conda
-#RUN chown -R ${NB_USER}:${NB_USER} /opt/conda
+RUN cd /home/${NB_USER}
 
