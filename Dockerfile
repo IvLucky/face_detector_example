@@ -15,7 +15,7 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
+RUN chmod 777 /opt/conda
 RUN chown -R ${NB_USER}:${NB_USER} /opt/conda
-RUN chmod 700 /opt/conda
 RUN conda install -y opencv
 RUN mkdir /app
