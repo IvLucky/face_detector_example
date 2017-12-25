@@ -2,7 +2,7 @@ FROM continuumio/anaconda
 
 RUN conda install -y opencv
 
-ENV NB_USER jovyan
+ENV NB_USER student
 ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
 
@@ -17,5 +17,5 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-RUN cd /home/${NB_USER}
+RUN workdir /home/${NB_USER}
 
